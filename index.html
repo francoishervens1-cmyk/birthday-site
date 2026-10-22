@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title> ❤️Happy💕 Birthday💕 my💕 Heart ❤️</title>
+<style>
+body {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    font-family: 'Segoe Script', cursive;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+h1 { font-size: 55px; margin-top: 80px; text-shadow: 2px 2px 15px #ffb6c1; }
+p { font-size: 26px; text-shadow: 1px 1px 8px #ffd1dc; }
+
+/* Bouton clignotant */
+button {
+    margin-top: 20px; padding: 15px 30px; font-size: 20px;
+    background-color: #ff4d6d; color: white; border: none; border-radius: 30px;
+    cursor: pointer; animation: blink 1.5s infinite;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+}
+@keyframes blink {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Sections avec fondu */
+.section { display: none; opacity: 0; transition: opacity 1.5s ease-in-out; }
+.visible { display: block; opacity: 1; }
+img { max-width: 300px; border-radius: 10px; margin: 20px; }
+
+/* Texte avec fondu progressif */
+.section p {
+    opacity: 0;
+    animation: textFade 3s ease forwards;
+}
+@keyframes textFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Menu final */
+.menu-thumbnails {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 15px; justify-items: center; margin-top: 20px;
+}
+.menu-thumbnails img {
+    max-width: 120px; border-radius: 10px; cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 1.5s ease-in-out;
+}
+.menu-thumbnails img:hover {
+    transform: scale(1.1); box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+<body>
+    <!-- Musique romantique -->
+    <audio id="fond" src="romantic_piano.mp3" loop></audio>
+
+    <!-- Accueil -->
+    <div id="accueil" class="visible">
+        <h1>❤️Happy💕 Birthday💕 my💕 Heart ❤️</h1>
+        <h2>💕 NESCHKA 💕</h2>
+<h3>Même si la distance nous sépare aujourd’hui🌹, mon cœur, lui, reste tout près du tien. Je ne cesse de penser à toi et j’aimerais tellement être à tes côtés, te serrer tendrement dans mes bras et tenir ta main en ce jour si spécial. Mon plus grand souhait est qu’un jour, la vie nous réunisse encore🫶 , pour que nous puissions vivre pleinement notre amour, sans distance entre nous💐. Que Dieu te protège, veille sur chacun de tes pas et t’apporte tout le bonheur🙏. Je t’aime profondément, mon amour❤🌹️</h3>
+        <p>Vendredi 23 Novembre 2026</p>
+        <button onclick="startSlideshow()">Lancer le diaporama 🎬</button>
+    </div>
+
+    <!-- Photos avec textes + bouton retour -->
+    <div id="section1" class="section"><img src="photo1.jpg"><p>Ton sourire ce jour-là 💕</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section2" class="section"><img src="photo2.jpg"><p>Ta main dans la mienne, ma tête contre toi, et le monde qui peut attendre. ❤️🥹 Je veux encore vivre des milliers de moments comme celui-là avec toi.</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section3" class="section"><img src="photo3.jpg"><p>Si tu savais à quel point j’aime ces moments avec toi… ❤️ Te serrer contre moi, sentir ta main sur ma tête et profiter simplement de ta présence. Dans ces instants, j’oublie tout ce qui ne va pas. Je me sens bien, en paix, comme si mon cœur avait enfin trouvé sa place🎁</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section5" class="section"><img src="photo5.jpg"><p> l'etoile de ma vie ✨</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section6" class="section"><img src="photo6.jpg"><p>🌹🎁🎈🎊🎉💌🎶</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section4" class="section"><img src="photo4.jpg"><p>Ton regard qui m’émerveille 🌹</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section7" class="section"><img src="photo7.jpg"><p> Avec toi, je peux être moi-même, sourire sans raison et oublier un instant tout ce qui me pèse. J’aime ces petits moments qu’on partage, tes sourires, ta tendresse et cette sensation d’être exactement là où je dois être🌺</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section8" class="section"><img src="photo8.jpg"><p>parfois je me demande ou tu etais ma coeur💖</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section9" class="section"><img src="photo9.jpg"><p>le regard qui tue 🫶🏽💕 </p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section10" class="section"><img src="photo10.jpg"><p>Parfois, le bonheur, c’est juste être dans les bras de la bonne personne et oublier tout le reste. ❤️🥹🫂🎉</p><button onclick="backToMenu()">Retour au menu</button></div>
+
+    <!-- Menu -->
+    <div id="menu" class="section">
+        <h2>Que veux-tu revoir ?</h2>
+        <div class="menu-thumbnails">
+            <img src="photo1.jpg" onclick="showSection(1)">
+            <img src="photo2.jpg" onclick="showSection(2)">
+            <img src="photo3.jpg" onclick="showSection(3)">
+            <img src="photo4.jpg" onclick="showSection(4)">
+            <img src="photo5.jpg" onclick="showSection(5)">
+            <img src="photo6.jpg" onclick="showSection(6)">
+            <img src="photo7.jpg" onclick="showSection(7)">
+            <img src="photo8.jpg" onclick="showSection(8)">
+            <img src="photo9.jpg" onclick="showSection(9)">
+            <img src="photo10.jpg" onclick="showSection(10)">
+        </div>
+        <button onclick="startSlideshow()">Rejouer le diaporama 🎬</button>
+        <button onclick="backToAccueil()">Retour à l’accueil 🏠</button>
+    </div>
+
+<script>
+let current = 0;
+let sections = ["section1","section2","section3","section4","section5","section6","section7","section8","section9","section10"];
+let timer;
+
+function startSlideshow() {
+    let audio = document.getElementById("fond");
+    audio.volume = 0;
+    audio.play();
+    // effet de fondu sur la musique
+    let fadeIn = setInterval(() => {
+        if (audio.volume < 1) {
+            audio.volume += 0.05;
+        } else {
+            clearInterval(fadeIn);
+        }
+    }, 300);
+
+    document.getElementById("accueil").style.display = "none";
+    document.getElementById("menu").classList.remove("visible");
+    current = 0;
+    showSection(current+1);
+    timer = setInterval(nextSlide, 8000);
+}
+
+function nextSlide() {
+    current++;
+    if (current < sections.length) {
+        showSection(current+1);
+    } else {
+        clearInterval(timer);
+        showSection('menu');
+    }
+}
+
+function showSection(id) {
+    document.querySelectorAll(".section, #menu").forEach(s => s.classList.remove("visible"));
+    if (id === 'menu') {
+        document.getElementById("menu").classList.add("visible");
+    } else {
+        document.getElementById("section" + id).classList.add("visible");
+    }
+}
+
+function backToMenu() {
+    document.querySelectorAll(".section").forEach(s => s.classList.remove("visible"));
+    document.getElementById("menu").classList.add("visible");
+}
+
+function backToAccueil() {
+    document.querySelectorAll(".section, #menu").forEach(s => s.classList.remove("visible"));
+    document.getElementById("accueil").style.display = "block";
+}
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title> ❤️Happy💕 Birthday💕 my💕 Heart ❤️</title>
+<style>
+body {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    font-family: 'Segoe Script', cursive;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+h1 { font-size: 55px; margin-top: 80px; text-shadow: 2px 2px 15px #ffb6c1; }
+p { font-size: 26px; text-shadow: 1px 1px 8px #ffd1dc; }
+
+/* Bouton clignotant */
+button {
+    margin-top: 20px; padding: 15px 30px; font-size: 20px;
+    background-color: #ff4d6d; color: white; border: none; border-radius: 30px;
+    cursor: pointer; animation: blink 1.5s infinite;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+}
+@keyframes blink {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Sections avec fondu */
+.section { display: none; opacity: 0; transition: opacity 1.5s ease-in-out; }
+.visible { display: block; opacity: 1; }
+img { max-width: 300px; border-radius: 10px; margin: 20px; }
+
+/* Texte avec fondu progressif */
+.section p {
+    opacity: 0;
+    animation: textFade 3s ease forwards;
+}
+@keyframes textFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Menu final */
+.menu-thumbnails {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 15px; justify-items: center; margin-top: 20px;
+}
+.menu-thumbnails img {
+    max-width: 120px; border-radius: 10px; cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 1.5s ease-in-out;
+}
+.menu-thumbnails img:hover {
+    transform: scale(1.1); box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+<body>
+    <!-- Musique romantique -->
+    <audio id="fond" src="romantic_piano.mp3" loop></audio>
+
+    <!-- Accueil -->
+    <div id="accueil" class="visible">
+        <h1>❤️Happy💕 Birthday💕 my💕 Heart ❤️</h1>
+        <h2>💕 NESCHKA 💕</h2>
+<h3>Même si la distance nous sépare aujourd’hui🌹, mon cœur, lui, reste tout près du tien. Je ne cesse de penser à toi et j’aimerais tellement être à tes côtés, te serrer tendrement dans mes bras et tenir ta main en ce jour si spécial. Mon plus grand souhait est qu’un jour, la vie nous réunisse encore🫶 , pour que nous puissions vivre pleinement notre amour, sans distance entre nous💐. Que Dieu te protège, veille sur chacun de tes pas et t’apporte tout le bonheur🙏. Je t’aime profondément, mon amour❤🌹️</h3>
+        <p>Vendredi 23 Novembre 2026</p>
+        <button onclick="startSlideshow()">Lancer le diaporama 🎬</button>
+    </div>
+
+    <!-- Photos avec textes + bouton retour -->
+    <div id="section1" class="section"><img src="photo1.jpg"><p>Ton sourire ce jour-là 💕</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section2" class="section"><img src="photo2.jpg"><p>Ta main dans la mienne, ma tête contre toi, et le monde qui peut attendre. ❤️🥹 Je veux encore vivre des milliers de moments comme celui-là avec toi.</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section3" class="section"><img src="photo3.jpg"><p>Si tu savais à quel point j’aime ces moments avec toi Te serrer contre moi, sentir ta main sur ma tête et profiter simplement de ta présence. Dans ces instants, j’oublie tout ce qui ne va pas. Je me sens bien, en paix, comme si mon cœur avait enfin trouvé sa place🎁</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section5" class="section"><img src="photo5.jpg"><p> l'etoile de ma vie ✨</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section6" class="section"><img src="photo6.jpg"><p>🌹🎁🎈🎊🎉💌🎶</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section4" class="section"><img src="photo4.jpg"><p>Ton regard qui m’émerveille 🌹</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section7" class="section"><img src="photo7.jpg"><p> Avec toi, je peux être moi-même, sourire sans raison et oublier un instant tout ce qui me pèse. J’aime ces petits moments qu’on partage, tes sourires, ta tendresse et cette sensation d’être exactement là où je dois être🌺</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section8" class="section"><img src="photo8.jpg"><p>parfois je me demande ou tu etais mon coeur💖</p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section9" class="section"><img src="photo9.jpg"><p>le regard qui tue 🫶🏽💕 </p><button onclick="backToMenu()">Retour au menu</button></div>
+    <div id="section10" class="section"><img src="photo10.jpg"><p>Parfois, le bonheur, c’est juste être dans les bras de la bonne personne et oublier tout le reste. ❤️🥹🫂🎉</p><button onclick="backToMenu()">Retour au menu</button></div>
+
+    <!-- Menu -->
+    <div id="menu" class="section">
+        <h2>Que veux-tu revoir ?</h2>
+        <div class="menu-thumbnails">
+            <img src="photo1.jpg" onclick="showSection(1)">
+            <img src="photo2.jpg" onclick="showSection(2)">
+            <img src="photo3.jpg" onclick="showSection(3)">
+            <img src="photo4.jpg" onclick="showSection(4)">
+            <img src="photo5.jpg" onclick="showSection(5)">
+            <img src="photo6.jpg" onclick="showSection(6)">
+            <img src="photo7.jpg" onclick="showSection(7)">
+            <img src="photo8.jpg" onclick="showSection(8)">
+            <img src="photo9.jpg" onclick="showSection(9)">
+            <img src="photo10.jpg" onclick="showSection(10)">
+        </div>
+        <button onclick="startSlideshow()">Rejouer le diaporama 🎬</button>
+        <button onclick="backToAccueil()">Retour à l’accueil 🏠</button>
+    </div>
+
+<script>
+let current = 0;
+let sections = ["section1","section2","section3","section4","section5","section6","section7","section8","section9","section10"];
+let timer;
+
+function startSlideshow() {
+    let audio = document.getElementById("fond");
+    audio.volume = 0;
+    audio.play();
+    // effet de fondu sur la musique
+    let fadeIn = setInterval(() => {
+        if (audio.volume < 1) {
+            audio.volume += 0.05;
+        } else {
+            clearInterval(fadeIn);
+        }
+    }, 300);
+
+    document.getElementById("accueil").style.display = "none";
+    document.getElementById("menu").classList.remove("visible");
+    current = 0;
+    showSection(current+1);
+    timer = setInterval(nextSlide, 8000);
+}
+
+function nextSlide() {
+    current++;
+    if (current < sections.length) {
+        showSection(current+1);
+    } else {
+        clearInterval(timer);
+        showSection('menu');
+    }
+}
+
+function showSection(id) {
+    document.querySelectorAll(".section, #menu").forEach(s => s.classList.remove("visible"));
+    if (id === 'menu') {
+        document.getElementById("menu").classList.add("visible");
+    } else {
+        document.getElementById("section" + id).classList.add("visible");
+    }
+}
+
+function backToMenu() {
+    document.querySelectorAll(".section").forEach(s => s.classList.remove("visible"));
+    document.getElementById("menu").classList.add("visible");
+}
+
+function backToAccueil() {
+    document.querySelectorAll(".section, #menu").forEach(s => s.classList.remove("visible"));
+    document.getElementById("accueil").style.display = "block";
+}
+</script>
+</body>
+</html>
